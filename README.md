@@ -19,6 +19,8 @@ By keeping all backends in one repository, we encourage code reuse and collabora
 ## Folder Structure
 
 The repository follows a folder structure to organize backend code for different projects. Each project's backend code resides within its designated folder. Below is an overview of the repository structure
+
+```
 project_name/
 │
 ├── config/
@@ -46,6 +48,7 @@ project_name/
 │ ├── ... # Validation functions and schemas for incoming data
 │
 └── ... # Additional files and directories for the project
+```
 
 ## Projects
 
