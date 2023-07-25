@@ -7,8 +7,11 @@ const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const db_1 = __importDefault(require("./db"));
 const config_1 = __importDefault(require("./config"));
+const todo_routes_1 = __importDefault(require("./routes/todo.routes"));
 const app = (0, express_1.default)();
+app.use(express_1.default.json());
 app.use((0, morgan_1.default)('dev'));
+app.use("/v1/api", todo_routes_1.default);
 app.get('/', (_req, res) => {
     return res.send('Received a GET HTTP method');
 });

@@ -20,8 +20,11 @@
     "config/**/*.ts",
     "controllers/**/*.ts",
     "db/**/*.ts",
+    "models/**/*.ts",
     "routes/**/*.ts",
-    "utils/**/*.ts"
+    "types/**/*.ts",
+    "utils/**/*.ts",
+    "validators/**/*.ts"
   ],
   "exclude": [
     "node_modules"
