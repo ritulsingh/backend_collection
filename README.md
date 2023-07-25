@@ -22,11 +22,13 @@ The repository follows a folder structure to organize backend code for different
 
 ## Projects
 
-Here's a list of projects included in this repository along with brief descriptions:
+Here's a list of projects included in this repository along with brief descriptions:</br>
 
-| Project Name | Description |
-| ------------ | ----------- |
-| Example      | Example     |
+[![Working](https://img.shields.io/badge/Readme_color_for_working-blue-blue)](#) &nbsp; &nbsp; [![Completed](https://img.shields.io/badge/Readme_color_for_completed-green-green)](#) &nbsp; &nbsp; [![Deleted](https://img.shields.io/badge/Readme_color_for_deleted-red-red)](#)
+
+| Project Name    | Description                                                                                                                                                                                                      | Tech Stack                                                               | Readme URL                                                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TodoApp Backend | The Todo backend is a server-side application that offers a RESTful API for managing todo items. It allows clients to perform CRUD operations on todos, facilitating efficient task organization and management. | NodeJS, Typescript, Express, MongoDB, Mongoose, Swagger, Docker-Compose, | [![Readme](https://img.shields.io/badge/Readme-View%20Readme-blue)](https://github.com/ritulsingh/backend_collection/blob/main/todoApp/README.md) |
 
 ## Contributing
 
