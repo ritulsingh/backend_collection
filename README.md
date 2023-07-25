@@ -19,6 +19,33 @@ By keeping all backends in one repository, we encourage code reuse and collabora
 ## Folder Structure
 
 The repository follows a folder structure to organize backend code for different projects. Each project's backend code resides within its designated folder. Below is an overview of the repository structure
+project_name/
+│
+├── config/
+│ ├── ... # Configuration files and settings
+│
+├── controllers/
+│ ├── ... # Controller files for handling HTTP requests and application logic
+│
+├── db/
+│ ├── ... # Database connection and configuration files
+│
+├── models/
+│ ├── ... # Model files defining data structure and interacting with the database
+│
+├── routes/
+│ ├── ... # Route files defining API endpoints and corresponding controllers
+│
+├── types/
+│ ├── ... # TypeScript type declarations and custom type definitions
+│
+├── utils/
+│ ├── ... # Utility functions shared across different parts of the backend
+│
+├── validators/
+│ ├── ... # Validation functions and schemas for incoming data
+│
+└── ... # Additional files and directories for the project
 
 ## Projects
 
