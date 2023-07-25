@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 18",
+  "compilerOptions": {
+    "lib": [
+      "ES2021",
+      "dom"
+    ],
+    "module": "commonjs",
+    "target": "es2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "*.ts",
+    "config/**/*.ts",
+    "controllers/**/*.ts",
+    "db/**/*.ts",
+    "routes/**/*.ts",
+    "utils/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
