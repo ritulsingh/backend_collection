@@ -4,8 +4,14 @@ import connectDB from './db';
 import config from './config';
 import urlShortRouter from './routes/urlShort.routes';
 
-
 const app: Express = express();
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./utils/swagger.json')
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
 app.use(express.json());
 app.use(morgan('dev'));
 
