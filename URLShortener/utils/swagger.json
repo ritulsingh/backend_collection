@@ -1,0 +1,217 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "URL Shortener API",
+    "version": "1.0.0",
+    "description": "API to create and manage shortened URLs."
+  },
+  "tags": [
+    {
+      "name": "Shorten URL",
+      "description": "Endpoints related to URL shortening."
+    },
+    {
+      "name": "Retrieve URL",
+      "description": "Endpoints to retrieve the original URL from a shortened URL."
+    },
+    {
+      "name": "Redirect",
+      "description": "Endpoints for redirecting to the original URL from a shortened URL."
+    },
+    {
+      "name": "Analytics",
+      "description": "Endpoints to retrieve analytics data for shortened URLs."
+    }
+  ],
+  "paths": {
+    "/api/urlShort/shorten": {
+      "post": {
+        "tags": [
+          "Shorten URL"
+        ],
+        "summary": "Shorten a URL",
+        "description": "Shortens a long URL and returns the shortened URL.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "The URL to be shortened.",
+                    "example": "https://example.com/very-long-url-that-needs-shortening"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response with the shortened URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "shortUrl": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "The shortened URL."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request - Invalid URL"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/urlShort/{shortCode}": {
+      "get": {
+        "tags": [
+          "Retrieve URL"
+        ],
+        "summary": "Retrieve the original URL from a shortened URL",
+        "description": "Retrieves the original URL associated with a specific short code.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The short code of the shortened URL."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with the original URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "originalUrl": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "The original URL."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - The short code does not exist."
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/{shortCode}": {
+      "get": {
+        "tags": [
+          "Redirect"
+        ],
+        "summary": "Redirect to the original URL from a shortened URL",
+        "description": "Redirects the user to the original URL associated with the short code.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The short code of the shortened URL."
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "Found - Redirecting to the original URL"
+          },
+          "404": {
+            "description": "Not Found - The short code does not exist."
+          }
+        }
+      }
+    },
+    "/api/analytics/{shortCode}": {
+      "get": {
+        "tags": [
+          "Analytics"
+        ],
+        "summary": "Retrieve analytics data for a shortened URL",
+        "description": "Retrieves the analytics data for a specific shortened URL.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "shortCode",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The short code of the shortened URL."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with the analytics data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "clickData": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Timestamp of the click event."
+                          },
+                          "ipAddress": {
+                            "type": "string",
+                            "description": "IP address of the user who clicked the shortened URL."
+                          },
+                          "referer": {
+                            "type": "string",
+                            "description": "Referrer URL, if available."
+                          },
+                          "userAgent": {
+                            "type": "string",
+                            "description": "User agent string of the client."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - The short code does not exist."
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}

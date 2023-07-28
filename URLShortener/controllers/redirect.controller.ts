@@ -14,7 +14,6 @@ const redirectController = async (req: Request, res: Response) => {
         referer: req.headers.referer,
         userAgent: req.headers['user-agent'],
       };
-      console.log(clickData);
       shortenedUrl.clicks.push(clickData);
       await shortenedUrl.save();
       res.redirect(shortenedUrl.originalUrl);
