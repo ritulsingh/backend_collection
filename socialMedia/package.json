@@ -1,0 +1,19 @@
+{
+  "name": "socialmedia",
+  "version": "1.0.0",
+  "description": "Crafting a dynamic social media backend to connect users, enable interactions, and foster engagement.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ritulsingh/backend_collection.git"
+  },
+  "author": "ritulsingh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ritulsingh/backend_collection/issues"
+  },
+  "homepage": "https://github.com/ritulsingh/backend_collection#readme"
+}
