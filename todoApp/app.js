@@ -23,4 +23,3 @@ app.get('/', (_req, res) => {
     console.error("Error starting the server:", error);
     process.exit(1);
 });
-;

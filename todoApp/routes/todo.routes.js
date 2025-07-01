@@ -22,10 +22,10 @@ todoRoutes.post("/create-todo", createTodo_controller_1.default);
 /**
  * @Method DELETE
  * @description delete a todo
- * @param {String} id - id of the todo
+ * @param {String} todoId - id of the todo
  * @returns {Object} returns data response
  */
-todoRoutes.delete("/delete-todo/:id", deleteTodo_controller_1.default);
+todoRoutes.delete("/delete-todo/:todoId", deleteTodo_controller_1.default);
 /**
  * @Method GET
  * @description get all todos

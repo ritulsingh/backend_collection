@@ -12,7 +12,15 @@ const toggleTodoDoneStatus = async (req: Request, res: Response) => {
     }
     todo.isComplete = !todo.isComplete;
     await todo.save({ validateBeforeSave: false });
-    return res.status(200).send(apiResponse(200, todo, "Todo marked " + todo.isComplete ? "done" : "undone"))
+    return res
+      .status(200)
+      .send(
+        apiResponse(
+          200,
+          todo,
+          `Todo marked ${todo.isComplete ? "done" : "undone"}`
+        )
+      );
   } catch (err: any) {
     return res.status(500).send(
       apiError(
