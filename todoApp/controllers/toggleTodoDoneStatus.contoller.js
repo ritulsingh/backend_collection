@@ -15,7 +15,9 @@ const toggleTodoDoneStatus = async (req, res) => {
         }
         todo.isComplete = !todo.isComplete;
         await todo.save({ validateBeforeSave: false });
-        return res.status(200).send((0, apiResponse_utils_1.default)(200, todo, "Todo marked " + todo.isComplete ? "done" : "undone"));
+        return res
+            .status(200)
+            .send((0, apiResponse_utils_1.default)(200, todo, `Todo marked ${todo.isComplete ? "done" : "undone"}`));
     }
     catch (err) {
         return res.status(500).send((0, errorResponse_utils_1.default)(500, "INTERNAL_SERVER_ERROR", err.message || "Internal server error"));

@@ -50,13 +50,13 @@ Below are the API endpoints available in the Todo App Backend:
   - `description` (String) - Description of the todo.
 - **Response**: Returns an object with data response.
 
-### Delete a Todo
+-### Delete a Todo
 
 - **Method**: DELETE
-- **Endpoint**: `/delete-todo/:id`
+- **Endpoint**: `/delete-todo/:todoId`
 - **Description**: Delete a todo item by its ID.
 - **Parameters**:
-  - `id` (String) - ID of the todo (required).
+  - `todoId` (String) - ID of the todo (required).
 - **Response**: Returns an object with data response.
 
 ### Get All Todos

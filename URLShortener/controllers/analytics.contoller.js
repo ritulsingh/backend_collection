@@ -19,7 +19,7 @@ const analyticsData = async (req, res) => {
             return res.status(200).send((0, apiResponse_utils_1.default)(200, data, 'Click data retrieved'));
         }
         else {
-            res.status(404).send((0, errorResponse_utils_1.default)(404, 'Short URL not found'));
+            res.status(404).send((0, errorResponse_utils_1.default)(404, 'NOT_FOUND', 'Short URL not found'));
         }
     }
     catch (err) {
