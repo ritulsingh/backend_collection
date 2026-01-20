@@ -1,0 +1,24 @@
+{
+  "name": "pulsetream",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PulseStream - high-performance real-time event ingestion, analytics, and alerting backend built on Bun.",
+  "scripts": {
+    "dev": "bun run app.ts",
+    "start": "bun run app.ts",
+    "test": "bun test"
+  },
+  "keywords": [
+    "bun",
+    "realtime",
+    "websocket",
+    "analytics",
+    "events",
+    "backend"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
+
